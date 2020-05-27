@@ -28,9 +28,8 @@ dependencies {
     // Use the Kotlin test library.
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.assertj:assertj-core:3.11.1")
-
-
-    
+    testImplementation("au.com.dius.pact.consumer:junit5:4.1.0")
+    testImplementation("com.jcabi:jcabi-http:1.17.2")
 }
 
 tasks.test {
