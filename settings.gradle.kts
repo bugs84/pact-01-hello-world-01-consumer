@@ -7,4 +7,4 @@
  * in the user manual at https://docs.gradle.org/6.3/userguide/multi_project_builds.html
  */
 
-rootProject.name = "pact01_HelloWorld"
+rootProject.name = "pact-01-hello-world-01-consumer"

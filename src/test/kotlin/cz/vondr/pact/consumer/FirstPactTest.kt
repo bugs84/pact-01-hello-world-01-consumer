@@ -1,4 +1,4 @@
-package cz.vondr.pact
+package cz.vondr.pact.consumer
 
 import au.com.dius.pact.consumer.MockServer
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider
@@ -32,7 +32,10 @@ class FirstPactTest {
     }
 
     @Test
-    fun test1(mockServer: MockServer) {
+    fun `get article json return expected response`(mockServer: MockServer) {
+        // TODO test consumer application with mocked producer
+
+        // Example, that mock works:
         val response = JdkRequest("${mockServer.getUrl()}/articles.json").fetch()
         println(response)
         val json = response.`as`(JsonResponse::class.java)
