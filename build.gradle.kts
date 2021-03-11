@@ -13,8 +13,6 @@ plugins {
 }
 
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
 
@@ -25,11 +23,17 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    // Use the Kotlin test library.
+
+    implementation("com.jcabi:jcabi-http:1.17.2")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.12.2")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.2")
+
+
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.2")
     testImplementation("org.assertj:assertj-core:3.11.1")
+
+    //pact 4 junit dep
     testImplementation("au.com.dius.pact.consumer:junit5:4.1.0")
-    testImplementation("com.jcabi:jcabi-http:1.17.2")
 }
 
 tasks.test {

@@ -27,4 +27,13 @@ generuje se spuštěním toho testu
 
 Pak se tenhle file dopravi do providera (kopirovani/artifactor/pact broker)
 
+
+ArticlesConsumer a ArticlesConsumerTest - is HelloWorld, which is a little bit closer to real world example
+
+
+## wiremock pact generator
+packt fily jdou nagenrovat i tímhle:
+https://bitbucket.org/atlassian/wiremock-pact-generator/src/master/
+viz. tenhle článek:
+https://zararsiddiqi.com/2019-09-19-contract-testing-junit5-pact-spring-wiremock/
  

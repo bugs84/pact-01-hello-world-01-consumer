@@ -19,7 +19,7 @@ class FirstPactTest {
 
 
     @Pact(provider = "ArticlesProvider", consumer = "test_consumer")
-    fun createPact(builder: PactDslWithProvider): RequestResponsePact? {
+    fun createPact(builder: PactDslWithProvider): RequestResponsePact {
         return builder
                 .given("test state")
                 .uponReceiving("ExampleJavaConsumerPactTest test interaction")
@@ -33,7 +33,7 @@ class FirstPactTest {
 
     @Test
     fun `get article json return expected response`(mockServer: MockServer) {
-        // TODO test consumer application with mocked producer
+        // Note test with more realistic consumer application is in file "ArticlesConsumerTest"
 
         // Example, that mock works:
         val response = JdkRequest("${mockServer.getUrl()}/articles.json").fetch()
@@ -43,4 +43,7 @@ class FirstPactTest {
         val responseTest = json.readObject().getBoolean("responsetest")
         assertThat(responseTest).isEqualTo(true)
     }
+
+
+
 }
