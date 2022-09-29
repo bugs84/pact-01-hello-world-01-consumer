@@ -22,6 +22,8 @@ https://github.com/pact-foundation/pact_broker
 V testech je 'FirstPactTest'
 Ten má namockovaného providera a zkouší že se chová jak potřebuje
 
+
+`gradlew test`
 do 'build/pacts' se nageneruje pact file 'test_consumer-ArticlesProvider.json'
 generuje se spuštěním toho testu
 
@@ -32,7 +34,7 @@ ArticlesConsumer a ArticlesConsumerTest - is HelloWorld, which is a little bit c
 
 
 ## wiremock pact generator
-packt fily jdou nagenrovat i tímhle:
+pact fily jdou nagenrovat i tímhle:
 https://bitbucket.org/atlassian/wiremock-pact-generator/src/master/
 viz. tenhle článek:
 https://zararsiddiqi.com/2019-09-19-contract-testing-junit5-pact-spring-wiremock/
