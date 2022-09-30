@@ -1,12 +1,24 @@
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.7.10"
     `java-library`
+
+    //For publishing contracts to Pact Broker
+    id("au.com.dius.pact") version "4.2.21" //The same as "pactVersion"
 }
 
 val pactVersion = "4.2.21"
 
 repositories {
     mavenCentral()
+}
+
+pact {
+    publish {
+        //pactDirectory = "$buildDir/pacts"
+        pactBrokerUrl="http://localhost:9292"
+        //pactBrokerUsername = "mybrokerUser"
+        //pactBrokerPassword = "mybrokerPassword"
+    }
 }
 
 dependencies {

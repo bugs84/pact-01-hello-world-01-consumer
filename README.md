@@ -1,3 +1,11 @@
+# CDC - Consumer Driven Contract tests - Usage example of pact.io for test
+This is example pact.io tests for "Consumer" application.
+
+## Associated projects:
+- https://github.com/bugs84/pact-01-hello-world-01-consumer
+- https://github.com/bugs84/pact-01-hello-world-02-producer
+- https://github.com/bugs84/pact-01-hello-world-pact-broker
+
 ## Sources:
 
 https://github.com/DiUS/pact-jvm
