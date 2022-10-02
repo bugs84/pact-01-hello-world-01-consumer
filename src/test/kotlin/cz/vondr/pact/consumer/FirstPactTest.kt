@@ -27,7 +27,10 @@ class FirstPactTest {
                 .method("GET")
                 .willRespondWith()
                 .status(200)
-                .body("""{"responsetest": true}""")
+                .body("""{"articles": [
+                    
+                   ]
+                 }""".trimIndent())
                 .toPact()
     }
 
@@ -40,8 +43,8 @@ class FirstPactTest {
         println(response)
         val json = response.`as`(JsonResponse::class.java)
                 .json()
-        val responseTest = json.readObject().getBoolean("responsetest")
-        assertThat(responseTest).isEqualTo(true)
+        val articlesArray = json.readObject().getJsonArray("articles")
+        assertThat(articlesArray).hasSize(0)
     }
 
 

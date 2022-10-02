@@ -17,6 +17,8 @@ class ArticlesConsumer(val articlesProducerUrl: String) {
         return listArticlesResponse
     }
 
+    fun getArticlesCount(): Int = listAllArticles().articles.size
+
     fun lengthOfAllArticles(): Int {
         return listAllArticles().articles.sumBy { it.length }
     }

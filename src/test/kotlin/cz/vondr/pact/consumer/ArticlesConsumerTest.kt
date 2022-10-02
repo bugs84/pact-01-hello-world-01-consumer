@@ -6,7 +6,7 @@ import au.com.dius.pact.consumer.junit5.PactConsumerTestExt
 import au.com.dius.pact.consumer.junit5.PactTestFor
 import au.com.dius.pact.core.model.RequestResponsePact
 import au.com.dius.pact.core.model.annotations.Pact
-import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -15,26 +15,26 @@ import org.junit.jupiter.api.extension.ExtendWith
 @PactTestFor(providerName = "ArticlesProvider")
 class ArticlesConsumerTest {
 
-
     @Pact(provider = "ArticlesProvider", consumer = "ArticlesConsumer")
     fun createPact(builder: PactDslWithProvider): RequestResponsePact {
         return builder
                 .given("Provider with three articles")
-                .uponReceiving("ExampleJavaConsumerPactTest test interaction")
+                .uponReceiving("ListAllArticles")
                 .path("/articles.json")
                 .method("GET")
                 .willRespondWith()
                 .status(200)
-                .body("""
+                .body(
+                    """
                     {
                       "articles" : [ {
-                        "name" : "Zásadní zprávy",
+                        "name" : "Basic news",
                         "length" : 104
                       }, {
-                        "name" : "O koťátkách",
+                        "name" : "About dogs",
                         "length" : 5684
                       }, {
-                        "name" : "Drby",
+                        "name" : "Gossip",
                         "length" : 4512384
                       } ]
                     }
@@ -43,15 +43,15 @@ class ArticlesConsumerTest {
     }
 
     @Test
-    fun `listAllArticles parse correctly and return expected number of articles`(articlesProvider: MockServer) {
+    fun `getArticlesCount return expected number of articles`(articlesProvider: MockServer) {
         // given
         val articlesConsumer = ArticlesConsumer(articlesProvider.getUrl())
 
         // when
-        val allArticles = articlesConsumer.listAllArticles()
+        val articlesCount = articlesConsumer.getArticlesCount()
 
         // then
-        assertThat(allArticles.articles.size).isEqualTo(3)
+        assertThat(articlesCount).isEqualTo(3)
     }
 
     @Test

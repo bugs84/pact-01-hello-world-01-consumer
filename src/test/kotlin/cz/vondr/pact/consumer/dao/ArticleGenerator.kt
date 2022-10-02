@@ -5,9 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper
 fun main() {
     val resp = ListArticlesResponse(
             listOf(
-                    Article("Zásadní zprávy", 104),
-                    Article("O koťátkách", 5684),
-                    Article("Drby", 4512384)
+                Article("Basic news", 104),
+                Article("About dogs", 5684),
+                Article("Gossip", 4512384),
             )
     )
 
